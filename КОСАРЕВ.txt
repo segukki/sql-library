@@ -1,0 +1,36 @@
+¹1
+SELECT ENAME,SAL,RANK() over(ORDER BY SAL DESC)EMP_ID ,
+RANK() over(ORDER BY SAL)EMP_ID,
+DENSE_RANK() over(ORDER BY SAL)EMP_ID,
+DENSE_RANK() over(ORDER BY SAL DESC)EMP_ID
+FROM EMP;
+¹2
+SELECT ENAME,SAL,round(100*RATIO_TO_REPORT(sal) over(),2) as SALSHARE
+FROM EMP;
+¹3
+select ename,deptno,job,hiredate,sal, 
+sum(sal) over (partition by deptno, job order by hiredate desc) as sum_sal 
+from emp;
+¹4
+SELECT ENAME,deptno,SAL,
+ROW_NUMBER() OVER (PARTITION BY deptno ORDER BY SAL desc)AS NUM
+FROM EMP;
+¹5
+SELECT ENAME,deptno,SAL,
+AVG(SAL) OVER (PARTITION BY deptno ORDER BY SAL desc ROWS 3 PRECEDING)AS NUM
+FROM EMP;
+¹6
+SELECT ENAME,deptno,hiredate,SAL,
+CASE
+WHEN (SAL>nvl(LAG(Sal,2) OVER(partition by deptno order by hiredate),0)) then '>'
+WHEN (SAL<nvl(LAG(Sal,2) OVER(partition by deptno order by hiredate),0)) then '<'
+else '=' end num
+FROM EMP;
+¹7
+select deptno, listagg(job, ', ') within group (order by job) jobs
+from (select deptno, job from emp group by (deptno, job)) group by deptno;
+¹8
+select ename, sal 
+from emp
+order by sal desc 
+fetch next 2 rows with ties;
