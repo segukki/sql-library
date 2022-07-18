@@ -7,10 +7,10 @@ The task:
 сущности: книги / посетители / филиалы / сотрудники
 
 информация о сущностях:
-  книги: название - varchar / автор - varchar / жанр - varchar / дата написания - data / кол-во раз аренды - integer / id - integer (6)
-  посетители: фио - varchar / дата рождения - data / кол-во раз аренды - integer / кол-во невозврата - integer / номер телефона - integer / id - integer (6)
-  филиалы: адрес - varchar / кол-во книг - integer / кол-во поситителей в месяц - integer (3)
-  сотрудники: фио - varchar / дата найма - data / должность - varchar / зарплата руб-мес - integer / номер телефона - integer / id - integer (6)
+  книги / books: названиe (name) - varchar / автор (author) - varchar / жанр (genre) - varchar / дата написания (writedate) - data / кол-во раз аренды (numrentdays) - integer / id - integer (6)
+  посетители / visitors: фио (name) - varchar / дата рождения (birthdate) - data / кол-во раз аренды (numrent) - integer / кол-во невозврата (nonrefnum) - integer / номер телефона (phonenum) - integer / id - integer (6)
+  филиалы / branches: адрес (adress) - varchar / кол-во книг (booknum) - integer / кол-во поситителей в месяц (visitorsnum) - integer (3)
+  сотрудники / employees: фио (name) - varchar / дата найма (hiredate) - data / должность (jobtitle) - varchar / зарплата руб-мес (salary) - integer / номер телефона (phonenum) - integer / id - integer (6)
 
 Разработать Create table по придуманным таблицам. Типы данных в таблицах должны быть разнообразными — number, integer, varchar2, date. Наполнить эти таблицы данными. Данные в таблицах должны быть такими, чтобы выводились какие-то результаты по запросам. Файлы с написанными конструкциями create и insert должны прилагаться к проекту. 
 
@@ -21,6 +21,24 @@ The task:
 4) объединения таблиц (лаб. 4 — join, left join) и множеств (лаб. 5 — union, minus, intersect);
 5) подзапросы (лаб. 6);
 6) аналитические функции (лаб. 7).
+
+Запросы:
+1) Выведите название, автора и жанр книг, которые были арендованы более 10 раз.
+2)
+3)
+4)
+5)
+6)
+7)
+8)
+9)
+10)
+11)
+12)
+13)
+14)
+15)
+16)
 
 Оформить проект в презентации, где:
 1) рассказать о своем объекте
