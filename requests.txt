@@ -1,0 +1,37 @@
+-- 1
+select bookname, author from books where branchid = 2;
+
+-- 2
+select bookname, author, writedate from books where branchid = 2 and copnum > 10;
+
+-- 3
+select visid, case
+    when to_date(ext_finish) > to_date(sysdate) then 'everything is fine'
+    when to_date(ext_finish) < to_date(sysdate) then 'gotta start worrying'
+    else 'its return time' 
+    end as return_or_no
+from ext order by visid;
+
+-- 4 
+select 'This year, ' || bookname || ' written by ' || author || ' turns ' 
+    || to_char(extract(year from sysdate) - extract(year from writedate)) || ' years old.' 
+    as age from books order by writedate;
+
+--5
+select min(copnum) as min_cop, max(copnum) as max_cop, trunc(avg(copnum), 2) as avg_cop from books group by branchid;
+
+-- 6
+select visid, count(*) as ext_books from ext group by visid having count(*) > 1;
+
+-- 7 
+select books.bookname,  branches.adress from books 
+    join branches on books.branchid = branches.brid order by branches.brid;
+
+-- 8 
+select visitors.visname as visitor_name, ext.ext_finish as last_ext_date from visitors 
+    join ext on visitors.visid = ext.visid and to_date(ext.ext_finish) > to_date(sysdate) 
+    order by ext.ext_finish;
+
+-- 9
+select books.bookname, books.author, nvl(to_char(ext.ext_start, 'DD.MM.YYYY'), 'not rented now') as rent 
+    from books left join ext on books.bookid = ext.bookid;
