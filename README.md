@@ -7,10 +7,10 @@ The task:
 сущности: книги / посетители / филиалы / сотрудники
 
 информация о сущностях:
-  книги / books: названиe (name) - varchar / автор (author) - varchar / жанр (genre) - varchar / дата написания (writedate) - data / кол-во раз аренды (numrentdays) - integer / id - integer (6)
-  посетители / visitors: фио (name) - varchar / дата рождения (birthdate) - data / кол-во раз аренды (numrent) - integer / кол-во невозврата (nonrefnum) - integer / номер телефона (phonenum) - integer / id - integer (6)
-  филиалы / branches: адрес (adress) - varchar / кол-во книг (booknum) - integer / кол-во поситителей в месяц (visitorsnum) - integer (3)
-  сотрудники / employees: фио (name) - varchar / дата найма (hiredate) - data / должность (jobtitle) - varchar / зарплата руб-мес (salary) - integer / номер телефона (phonenum) - integer / id - integer (6)
+1) книги / books: названиe (name) - varchar / автор (author) - varchar / жанр (genre) - varchar / дата написания (writedate) - data / кол-во раз аренды (numrentdays) - integer / id - integer (6)
+2) посетители / visitors: фио (name) - varchar / дата рождения (birthdate) - data / кол-во раз аренды (numrent) - integer / кол-во невозврата (nonrefnum) - integer / номер телефона (phonenum) - integer / id - integer (6)
+3) филиалы / branches: адрес (adress) - varchar / кол-во книг (booknum) - integer / кол-во поситителей в месяц (visitorsnum) - integer (3)
+4) сотрудники / employees: фио (name) - varchar / дата найма (hiredate) - data / должность (jobtitle) - varchar / зарплата руб-мес (salary) - integer / номер телефона (phonenum) - integer / id - integer (6)
 
 Разработать Create table по придуманным таблицам. Типы данных в таблицах должны быть разнообразными — number, integer, varchar2, date. Наполнить эти таблицы данными. Данные в таблицах должны быть такими, чтобы выводились какие-то результаты по запросам. Файлы с написанными конструкциями create и insert должны прилагаться к проекту. 
 
