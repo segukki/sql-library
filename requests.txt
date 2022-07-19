@@ -41,3 +41,6 @@ select * from (select bookname, author from books order by copnum desc) where ro
 
 -- 11
 select bookname, author from books order by by copnum desc fetch next 3 rows only;
+
+-- 12
+select branchid, listagg (bookname, ', ' ) within group (order by copnum) as books from books group by branchid; 
