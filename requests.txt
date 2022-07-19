@@ -33,5 +33,11 @@ select visitors.visname as visitor_name, ext.ext_finish as last_ext_date from vi
     order by ext.ext_finish;
 
 -- 9
-select books.bookname, books.author, nvl(to_char(ext.ext_start, 'DD.MM.YYYY'), 'not rented now') as rent 
+select books.bookname, books.author, nvl(to_char(ext.ext_start, 'DD.MM.YY'), 'not rented now') as rent 
     from books left join ext on books.bookid = ext.bookid;
+
+-- 10
+select * from (select bookname, author from books order by copnum desc) where rownum < 4;
+
+-- 11
+select bookname, author from books order by by copnum desc fetch next 3 rows only;
